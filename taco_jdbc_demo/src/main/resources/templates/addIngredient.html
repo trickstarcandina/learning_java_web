@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+  </head>
+<body>
+    <form method="POST" th:action="@{/ingredient}" th:object="${ingredient}">
+      <h1>Add a new Ingredient!</h1>
+      <h3>Input the ingredient information ...</h3>
+      <table cellspacing="5" border="0">
+		<tr>
+	      	<td align="right"><label for="id">ID: </label></td>
+	      	<td align="right"><input type="text" th:field="*{id}"/></td>
+      	</tr>
+      	<tr>
+	      	<td align="right"><label for="name">Name: </label></td>
+	      	<td align="right"><input type="text" th:field="*{name}"/></td>
+      	</tr>
+      	<tr>
+	      	<td align="right"><label for="type">Type: </label></td>
+	      	<td align="left">
+	      		<select th:field="*{type}">
+			    	<option th:value="'WRAP'" th:text="WRAP"></option>
+			    	<option th:value="'PROTEIN'" th:text="PROTEIN"></option>
+			    	<option th:value="VEGGIES" th:text="VEGGIES"></option>
+			    	<option th:value="'CHEESE'" th:text="CHEESE"></option>
+			    	<option th:value="'SAUCE'" th:text="SAUCE"></option>
+		  		</select>
+		  	</td>
+	  	</tr>
+	  	<tr>
+	  		<td></td>
+	  		<td><br><input type="submit" value="Submit"></td>
+		</tr>
+		</table>	
+    </form>
+</body>
+</html>

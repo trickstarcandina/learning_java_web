@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+  </head>
+<body>
+      <h1>Add Ingredient Successfully!</h1>
+      <table cellspacing="5" border="0">
+		<tr>
+	      	<td align="right"><label for="id">ID: </label></td>
+	      	<td align="left"><label th:text="${ingredient.id}"></label></td>
+      	</tr>
+      	<tr>
+	      	<td align="right"><label for="name">Name: </label></td>
+	      	<td align="left"><label th:text="${ingredient.name}"></label></td>
+      	</tr>
+      	<tr>
+	      	<td align="right"><label for="type">Type: </label></td>
+	      	<td align="left"><label th:text="${ingredient.type}"></label></td>
+	  	</tr>
+		</table>	
+		
+		<p>To enter another Ingredient, click on the Back <br>
+		button in your browser or the Return button shown <br>
+		below.</p>
+
+		<form action="/ingredient/add" method="get">
+    		<input type="submit" value="Return">
+		</form>
+		
+</body>
+</html>
